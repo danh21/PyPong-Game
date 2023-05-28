@@ -5,6 +5,8 @@ from pygame.sprite import *
 from pygame.mixer import *
 from random import *
 
+linkMusic = "D:/cd/Python/CODE/PyPong-Game/Rubik.mp3"
+
 class RectangularSprite(Sprite):   
     def __init__(self, size, center):
         Sprite.__init__(self)
@@ -31,9 +33,9 @@ class Banner(Sprite):
         self.rect.center = (50, 30)
 
 #music
-mixer.init() # initialize sound system
-music.load("D:/cd/MachineLearning_AI/python fundamental/Python_Slide/week10/Rubik.mp3") # load bg music file
-music.play(loops=-1) # play/loop music
+mixer.init()            # initialize sound system
+music.load(linkMusic)   # load bg music file
+music.play(loops=-1)    # play/loop music
 
 # main
 pygame.init()
@@ -51,7 +53,7 @@ all_sprites = Group(border_top, border_bottom, border_left, border_right, paddle
 score_font = pygame.font.SysFont(None, 72)
 time.set_timer(USEREVENT, 20)
 
-#khoi tao
+#init
 up = 1
 down = -1
 left = -2
